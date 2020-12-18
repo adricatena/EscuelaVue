@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <form @submit.prevent="guardarTarea">
+            <input type="text" placeholder="Tarea" v-model="nuevaTarea">
+            <input type="submit" value="Guardar tarea">
+        </form>
+        <br>
+        <input v-model="tiempo" type="range">{{tiempo}}
+        <br>
+        <input v-model="busqueda" type="search" placeholder="Buscar tarea">
+        <hr>
+        <li v-for="tarea in filtroTareas">{{tarea.nombre}} - {{tarea.tiempo}}</li>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

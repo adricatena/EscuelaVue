@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <form action="" v-on:submit.prevent="guardarTarea">
+        <input v-model="nuevaTarea" type="text" />
+        <input type="submit" value="Guardar" />
+      </form>
+      <ul>
+        <li v-for="tarea in tareas">{{tarea}}</li>
+      </ul>
+      <pre>{{$data}}</pre>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

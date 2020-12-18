@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video 13</title>
+  <style>
+    form {
+        font-family: sans-serif;
+    }
+
+    input:not([type="radio"]),
+    textarea,
+    label,
+    select {
+        display: block;
+    }
+
+    label,
+    input[type="submit"] {
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    input,
+    textarea,
+    select {
+        min-width: 200px;
+    }
+
+    .invalido {
+        border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="app">
+    <form>
+      <label for="nombre">Nombre</label>
+      <input type="text" required id="nombre" v-model="form.nombre" :class="{invalido: !form.nombre}">
+      <label for="apellidos">Apellidos</label>
+      <input type="text" required id="apellidos" v-model="form.apellidos" :class="{invalido: !form.nombre}">
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" required v-model="form.mensaje" :class="{invalido: !form.nombre}"></textarea>
+      <label for="">Hora de contacto</label>
+      <span>Mañanas</span>
+      <input type="radio" value="mañanas" v-model="form.contacto">
+      <span>Tardes</span>
+      <input type="radio" value="tardes" v-model="form.contacto">
+      <span>Noches</span>
+      <input type="radio" value="noches" v-model="form.contacto">
+      <label for="productos">Producto/s</label>
+      <select id="productos" v-model="form.productos">
+        <option value="producto1">Producto 1</option>
+        <option value="producto2">Producto 2</option>
+        <option value="producto3">Producto 3</option>
+      </select>\
+      <label for="acepta">Aceptacion de condiciones</label>
+      <span>Acepto el blablabla</span>
+      <input type="checkbox" id="acepta" v-model="form.acepta">
+      <input type="submit" value="Enviar" v-if="form.acepta">
+    </form>
+  </main>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
